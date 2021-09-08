@@ -739,6 +739,12 @@
       }
     }
   }
+  // remove exclamation mark from fines row
+  .fines-status .badge.overdue {
+    &:before {
+      content:"";
+    }
+  }
 }
 
 .history-holder {
