@@ -1,6 +1,5 @@
 <!-- START of: finna - navibar.phtml --> 
 <?php
-    $capabilityParams = [];
     $user = $this->auth()->isLoggedIn();
     $patron = $user ? $this->auth()->getILSPatron() : false;
     $capabilityParams = $patron ? ['patron' => $patron] : [];
@@ -100,7 +99,6 @@
       </div>
     <?php //hide login if unavailable ?>
     <?php if (is_object($account) && $account->loginEnabled()): ?>
-      <?php $user = $account->isLoggedIn(); ?>
       <?php if (!$user): ?>
         <ul role="menubar" class="nav navbar-nav nav-login">
           <li class="nav-login" id="loginOptions-navi">
