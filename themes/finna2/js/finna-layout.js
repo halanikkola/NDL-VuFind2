@@ -336,6 +336,12 @@ finna.layout = (function finnaLayout() {
         $(this).prepend('<div class="building-filter"><label for="building_filter" class="sr-only">' + VuFind.translate('Organisation') + '</label><input class="form-control" id="building_filter" placeholder="' + VuFind.translate('Organisation') + '..."></input></div>');
         initBuildingFilter();
       }
+
+      // Add count descriptor to every facet value node for accessibility
+      tree.find('ul > li.jstree-node .badge').each(function appendDescriptors() {
+        $(this).append('<span class="sr-only">' + VuFind.translate('search_results') + '</span>')
+      });
+
       // open facet if it has children and it is selected
       tree.find('.jstree-node.active.jstree-closed').each(function openNode() {
         tree.jstree('open_node', this, null, false);
