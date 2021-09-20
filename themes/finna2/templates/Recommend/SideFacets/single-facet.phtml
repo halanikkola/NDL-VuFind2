@@ -39,6 +39,7 @@
   <?php if (!$this->facet['isApplied']): ?>
     <span class="badge">
       <?=$this->localizedNumber($this->facet['count']) ?>
+      <span class="sr-only"><?=$this->transEsc('search_results') ?></span>
     </span>
   <?php else: ?>
     <span class="status">
