@@ -339,7 +339,7 @@ finna.layout = (function finnaLayout() {
 
       // Add count descriptor to every facet value node for accessibility
       tree.find('ul > li.jstree-node .badge').each(function appendDescriptors() {
-        $(this).append('<span class="sr-only">' + VuFind.translate('search_results') + '</span>')
+        $(this).append('<span class="sr-only">' + VuFind.translate('search_results') + '</span>');
       });
 
       // open facet if it has children and it is selected
