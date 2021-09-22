@@ -311,6 +311,20 @@ JS;
       <?php endif; ?>
       <?php if (!empty($this->layout()->finnaFilters)): ?>
         <div class="search-filters">
+          <div class="mobile-navigation visible-xs hidden-print">
+            <ul>
+              <li class="sidebar-navigation">
+                <span class="narrow-search-link">
+                  <?=$this->transEsc('Narrow Search')?>
+                </span>
+                <?php if ($filterCount > 0): ?>
+                  <span class="active-filters">
+                    <?=$this->transEsc('Active filters')?>: <span class="active-filter-count"><?=$filterCount?></span>
+                  </span>
+                <?php endif; ?>
+              </li>
+            </ul>
+          </div>
           <div class="container filters-container">
             <?=$this->layout()->finnaFilters?>
           </div>

@@ -299,20 +299,7 @@
   </div>
 </div>
 <?php endif; ?>
-<div class="mobile-navigation visible-xs hidden-print">
-  <ul>
-    <li class="sidebar-navigation">
-      <span class="narrow-search-link">
-        <i class="fa fa-arrow-up"></i> <?=$this->transEsc('Narrow Search')?>
-      </span>
-      <?php if ($filterCount > 0): ?>
-        <span class="active-filters">
-          <?=$this->transEsc('Active filters')?>: <span class="active-filter-count"><?=$filterCount?></span>
-        </span>
-      <?php endif; ?>
-    </li>
-  </ul>
-</div>
+
 <?php // Re-open the container div closed above: ?>
 <div class="container">
 
