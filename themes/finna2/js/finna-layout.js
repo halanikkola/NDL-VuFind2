@@ -338,8 +338,10 @@ finna.layout = (function finnaLayout() {
       }
 
       // Add count descriptor to every facet value node for accessibility
-      tree.find('ul > li.jstree-node .badge').each(function appendDescriptors() {
-        $(this).append('<span class="sr-only">' + VuFind.translate('search_results') + '</span>');
+      tree.find('ul > li.jstree-node').each(function appendDescriptors() {
+        var badge = $(this).find('.badge');
+        badge.attr('aria-hidden', 'true');
+        $(this).find('.facet-value').append('<span class="sr-only">, ' + VuFind.translate('result_count', {'%%count%%': badge.text()}) + '</span>');
       });
 
       // open facet if it has children and it is selected
