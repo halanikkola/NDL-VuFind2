@@ -4,6 +4,23 @@
   border-bottom: 1px solid @filterContent-border-color;
   box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   position: relative;
+  @media (max-width: @screen-xs-max) {
+    position: sticky;
+    z-index: 1000;
+    top: 64px;
+  }
+  .mobile-navigation {
+    position: relative;
+    height: auto;
+    background: #fff;
+    border-bottom: 1px solid @btn-default-border;
+    > ul {
+      margin-bottom: 0;
+    }
+    .narrow-search-link {
+      width: 100%;
+    }
+  }
 }
 
 .template-dir-search,

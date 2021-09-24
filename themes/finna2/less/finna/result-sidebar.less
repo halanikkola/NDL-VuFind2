@@ -78,6 +78,11 @@
 .sidebar > h1,
 .sidebar > h2 {
   margin-bottom: 5px;
+  @media (max-width: @screen-xs-max) {
+    position: sticky;
+    z-index: 1000;
+    top: 0px;
+  }
 }
 
 .list-group {

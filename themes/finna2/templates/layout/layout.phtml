@@ -309,27 +309,27 @@ JS;
       <?php if (!empty($this->layout()->advSearchHeader)): ?>
         <?=$this->layout()->advSearchHeader; ?>
       <?php endif; ?>
-      <?php if (!empty($this->layout()->finnaFilters)): ?>
+      <?php if ($this->layout()->templateName === 'results' || (!empty($this->layout()->finnaFilters))): ?>
         <div class="search-filters">
+        <?php if ($this->layout()->templateName === 'results'): ?>
           <div class="mobile-navigation visible-xs hidden-print">
             <ul>
               <li class="sidebar-navigation">
-                <span class="narrow-search-link">
+                <span class="narrow-search-link btn btn-primary btn-lg">
                   <?=$this->transEsc('Narrow Search')?>
                 </span>
-                <?php if ($filterCount > 0): ?>
-                  <span class="active-filters">
-                    <?=$this->transEsc('Active filters')?>: <span class="active-filter-count"><?=$filterCount?></span>
-                  </span>
-                <?php endif; ?>
               </li>
             </ul>
           </div>
-          <div class="container filters-container">
-            <?=$this->layout()->finnaFilters?>
-          </div>
+          <?php endif; ?>
+          <?php if (!empty($this->layout()->finnaFilters)): ?>
+            <div class="container filters-container">
+              <?=$this->layout()->finnaFilters?>
+            </div>
+          <?php endif; ?>
         </div>
       <?php endif; ?>
+      </div>
       <?php if (!empty($this->layout()->finnaStreetBar)): ?>
         <?=$this->layout()->finnaStreetBar?>
       <?php endif; ?>
