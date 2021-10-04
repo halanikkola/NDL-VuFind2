@@ -438,7 +438,12 @@ finna.layout = (function finnaLayout() {
 
     var target = null;
     var identifier = decodeURIComponent(window.location.hash);
-    if (identifier !== '') {
+    if (identifier === '') {
+      // Scroll to search box
+      if ($(window).height() < 960 && $(window).scrollTop() === 0) {
+        target = $('.search-form-container');
+      }
+    } else {
       // Scroll to record
       var result = $('.hiddenId[value="' + identifier.substr(1) + '"]');
       if (result.length) {
