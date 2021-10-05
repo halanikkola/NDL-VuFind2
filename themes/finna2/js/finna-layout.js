@@ -327,6 +327,9 @@ finna.layout = (function finnaLayout() {
     tree.find('.facet').each(function appendDescriptors() {
       var badge = $(this).find('.badge');
       badge.attr('aria-hidden', 'true');
+      if ($(this).find('.facet-value .sr-only').length > 0) {
+        return;
+      }
       $(this).find('.facet-value').append('<span class="sr-only">, ' + VuFind.translate('result_count', {'%%count%%': badge.text()}) + '</span>');
     });
   }
