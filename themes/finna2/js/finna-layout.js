@@ -149,6 +149,13 @@ finna.layout = (function finnaLayout() {
     });
   }
 
+  function initMobileCartIndicator() {
+    $('.mobile-toolbar li.btn-bookbag-toggle a').on('click', function onClickMobileCart() {
+      $(this).addClass('activated');
+      $(this).siblings().removeClass('activated');
+    });
+  }
+
   function initCheckboxClicks() {
     $('.template-name-mylist input.checkbox-select-item').on('click', function onClickCheckbox() {
       var actions = $('.mylist-functions button, .mylist-functions select');
@@ -756,6 +763,7 @@ finna.layout = (function finnaLayout() {
       initTruncate();
       initContentNavigation();
       initMobileNarrowSearch();
+      initMobileCartIndicator();
       initCheckboxClicks();
       initToolTips();
       initModalToolTips();
