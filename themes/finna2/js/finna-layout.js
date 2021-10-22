@@ -151,8 +151,8 @@ finna.layout = (function finnaLayout() {
 
   function initMobileCartIndicator() {
     $('.mobile-toolbar li.btn-bookbag-toggle a').on('click', function onClickMobileCart() {
-      $(this).addClass('activated');
-      $(this).siblings().removeClass('activated');
+      $(this).siblings().addClass('activated');
+      $(this).removeClass('activated');
     });
   }
 
