@@ -111,33 +111,34 @@
 
         }
       }
-      @keyframes border-blinker {
-        50%  {
-            border-color: screen(@sidebar-background, rgba(255, 255, 255, 0.4));
-        }
+      .blinker {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: transparent;
       }
 
       .fa-close {
         position: absolute;
-        top: 3px;
-        right: 1px;
+        top: 6px;
+        right: 4px;
         font-size: 11px;
         border-radius: 50%;
-        border: 3px solid @sidebar-background;
+        box-shadow: 0 0 0 3px @sidebar-background;
       }
 
       &:hover {
-        transition: background-color .2s ease-in-out;
         .fa-close {
-          transition: border-color .2s ease-in-out;
-          border-color: screen(@sidebar-background, rgba(255, 255, 255, 0.2));
+          transition: box-shadow .2s ease-in-out;
+          box-shadow: 0 0 0 3px screen(@sidebar-background, rgba(255, 255, 255, 0.2));
         }
       }
 
       &.activated {
-        animation: bg-blinker .4s ease-in-out .2s 2;
-        .fa-close {
-          animation: border-blinker .4s ease-in-out .2s 2;
+        .blinker {
+          animation: bg-blinker .4s ease-in-out .2s 2;
         }
       }
 
