@@ -223,7 +223,15 @@ JS;
         <?php if (isset($this->layout()->skiplink)): // additional skip links ?>
           <?=$this->layout()->skiplink ?>
         <?php endif; ?>
-        <a class="sr-only sr-only-focusable" href="#content"><?=$this->transEsc('Skip to content') // skip to content ?></a>
+        <?php
+          $contentElementId = 'content';
+          if (!empty($this->layout()->finnaMainHeader)) {
+            $contentElementId = 'content-heading';
+          } elseif (!empty($this->layout()->finnaMainTabs)) {
+            $contentElementId = 'content-main-tabs';
+          }
+        ?>
+        <a class="sr-only sr-only-focusable" href="#<?=$contentElementId?>"><?=$this->transEsc('Skip to content') // skip to content ?></a>
         <?=$this->render('navibar.phtml')?>
       </div>
     </header>
@@ -296,14 +304,14 @@ JS;
         <?=$this->layout()->finnaStreetBar?>
       <?php endif; ?>
       <?php if (!empty($this->layout()->finnaMainHeader)): ?>
-        <div class="finna-main-header">
+        <div id="content-heading" class="finna-main-header">
           <div class="container">
             <?=$this->layout()->finnaMainHeader?>
           </div>
         </div>
       <?php endif; ?>
       <?php if (!empty($this->layout()->finnaMainTabs)): ?>
-        <div class="finna-main-tabs">
+        <div id="content-main-tabs" class="finna-main-tabs">
           <div class="container">
             <?=$this->layout()->finnaMainTabs?>
           </div>
