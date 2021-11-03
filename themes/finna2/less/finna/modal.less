@@ -54,6 +54,15 @@
   & .alert-success {
     margin-top: @modal-title-padding;
   }
+  @media (max-width: @screen-xs-max) {
+    & .form-group {
+      > textarea,
+      > select,
+      > input {
+        width: 100%;
+      }
+    }
+  }
 }
 
 #modal .cart-controls .btn { margin-bottom: 4px; }
