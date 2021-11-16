@@ -154,12 +154,17 @@ finna.record = (function finnaRecord() {
       if ($(e.target).hasClass('location-service') || $(e.target).parents().hasClass('location-service')) {
         return;
       }
-      $(this).nextUntil('.holdings-container-heading').toggleClass('collapsed');
+      var collapsible = $(this).nextUntil('.holdings-container-heading');
+      collapsible.toggleClass('collapsed');
       if ($('.location .fa', this).hasClass('fa-arrow-down')) {
+        collapsible.attr('aria-hidden', "true");
+        collapsible.attr('aria-expanded', "false");
         $('.location .fa', this).removeClass('fa-arrow-down');
         $('.location .fa', this).addClass('fa-arrow-right');
       }
       else {
+        collapsible.attr('aria-hidden', "false");
+        collapsible.attr('aria-expanded', "true");
         $('.location .fa', this).removeClass('fa-arrow-right');
         $('.location .fa', this).addClass('fa-arrow-down');
         var rows = $(this).nextUntil('.holdings-container-heading');
