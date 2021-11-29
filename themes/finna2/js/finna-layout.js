@@ -150,11 +150,13 @@ finna.layout = (function finnaLayout() {
   }
 
   function initMobileCartIndicator() {
-    $('.mobile-toolbar li.btn-bookbag-toggle a').on('click', function onClickMobileCart() {
-      $('.navbar-toggle').removeClass('activated');
-      setTimeout(function triggerAnimation() {
-        $('.navbar-toggle').addClass('activated');
-      }, 100);
+    $('.btn-bookbag-toggle a').on('click', function onClickMobileCart() {
+      if ($(this).hasClass('cart-add')){
+        $('.navbar-toggle').removeClass('activated');
+        setTimeout(function triggerAnimation() {
+          $('.navbar-toggle').addClass('activated');
+        }, 100);
+      }
     });
   }
 
