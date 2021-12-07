@@ -24,6 +24,9 @@
       <br/>
     <?php endif; ?>
     <div class="note-rows">
+      <?php if ($view === 'list' || $view === 'compact'): ?>
+        <i class="fa fa-file-text-o"></i><span><?=$noteDesc?>:</span>
+      <?php endif; ?>
       <?=$note;?>
     </div>
   </div>
