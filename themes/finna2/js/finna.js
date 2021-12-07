@@ -21,6 +21,7 @@ var finna = (function finnaModule() {
         'myList',
         'openUrl',
         'organisationList',
+        'pdf',
         'primoAdvSearch',
         'record',
         'searchTabsRecommendations',

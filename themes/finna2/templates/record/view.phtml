@@ -88,11 +88,12 @@
           'finna.record.handleRedirect(' . json_encode($oldRecordId) . ', ' . json_encode($this->driver->getUniqueID()) . ');',
           'SET'
       );
+  }
 
   if (!$noImage && $format === 'qdc') {
     $allImages = $this->driver->getAllImages(null, true);
     if ($allImages && $allImages[0]['pdf'] ?? false) {
-      echo '<script>var pdfUrl = "' . $allImages[0]['urls']['large'] . '"; var recordId = "' . $this->driver->getUniqueID() . '"; </script>';
+      echo '<div id="pdf-data" data-pdfurl= "' . $allImages[0]['urls']['large'] . '" data-recordid= "' . $this->driver->getUniqueID() . '"> </div>';
     }
   }
 ?>
