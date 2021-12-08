@@ -16,7 +16,7 @@
   $noteDesc = $this->transEsc('Note');
 ?>
 <?php if ($view === 'condensed'): ?>
-  <button class="note-button condensed" aria-hidden="true" title="<?=$noteDesc?>"><i class="fa fa-file-text-o"></i><?=$noteDesc?><span class="caret"></span></button>
+  <button class="note-button condensed" aria-hidden="true" title="<?=$noteDesc?>"><i class="fa fa-file-text-o" aria-hidden=“true”></i><?=$noteDesc?><span class="caret"></span></button>
 <?php endif; ?>
 <div class="<?= in_array($view, ['grid', 'condensed']) ? "note-overlay-$view note-hide" : 'note-overlay-list' ?>">
   <div class="notes">
@@ -25,7 +25,7 @@
     <?php endif; ?>
     <div class="note-rows">
       <?php if ($view === 'list' || $view === 'compact'): ?>
-        <i class="fa fa-file-text-o"></i><span><?=$noteDesc?>:</span>
+        <i class="fa fa-file-text-o" aria-hidden=“true”></i><span><?=$noteDesc?>:</span>
       <?php endif; ?>
       <?=$note;?>
     </div>
