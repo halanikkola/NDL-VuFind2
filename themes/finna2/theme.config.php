@@ -222,6 +222,7 @@ $config = [
         'finna-organisation-info-page-consortium.js',
         'finna-organisation-info-widget.js',
         'finna-organisation-map-leaflet.js',
+        'finna-pdf.js',
         'finna-primo-adv-search.js',
         'finna-R2.js',
         'finna-recommendation-memory.js',

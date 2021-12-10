@@ -2,8 +2,7 @@
 finna.pdf = (function finnaPdf() {
 
   function initPdfJS() {
-    console.log("init");
-
+    
     const pdfDataElement = $("#pdf-data");
     const pdfUrl = pdfDataElement.data("pdfurl");
     const recordId = pdfDataElement.data("recordid");
@@ -11,23 +10,8 @@ finna.pdf = (function finnaPdf() {
     if (typeof pdfUrl === "undefined") {
       return;
     }
-    /*
-    var options = {
-      page: 1,
-      pdfOpenParams: {
-        navpanes: false,
-      }
-    };
-    */
-    /*
-    const btn = $("<button class=\"pdf-btn\">Open PDF (native)</button>").click(function nativebutton() {
-      $(".recordcover-container").css({"width": "100%", "height": "600px"});
-      PDFObject.embed(pdfUrl, el);
-      $(".pdf-btn").remove();
-    });
-    */
-    const el = $(".image-popup-trigger").parent();
 
+    const el = $(".image-popup-trigger").parent();
 
     const proxyUrl = VuFind.path + "/Cover/download?size=master&format=pdf&&id=" + recordId;
     const iframe = $("<iframe/>")
