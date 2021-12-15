@@ -21,11 +21,39 @@ finna.pdf = (function finnaPdf() {
       .attr("width", "100%")
       .attr("height", "600");
 
-    const btn2 = $("<button class=\"pdf-btn\">Open PDF (pdfjs)</button>").click(function pdfjsbutton() {
+    const desktopBtn = $("<button class=\"btn btn-primary pdf-btn desktop-pdf-btn\">" + VuFind.translate('open_online_link', {'%%format%%': 'PDF'}) + "</button>").click(function pdfjsbutton() {
       el.replaceWith(iframe);
-      $(".pdf-btn").remove();
+      $(".desktop-pdf-btn").remove();
     });
-    $(".image-popup-trigger").parent().after(btn2);
+    $(".image-popup-trigger").parent().after(desktopBtn);
+
+    
+    const mobileBtn = $("<button class=\"btn btn-primary pdf-btn mobile-pdf-btn\">" + VuFind.translate('open_online_link', {'%%format%%': 'PDF'}) + "</button>").click(function pdfjsbutton() {
+      var parent;
+      var translations = {
+        close: VuFind.translate('close')
+      };
+      $('body').find('[data-embed-pdf]').each(function initVideo() {
+        $(this).finnaPopup({
+          id: 'recordpdf',
+          modal: iframe,
+          classes: 'pdf-popup',
+          parent: parent,
+          embed: iframe,
+          translations: translations,
+          onPopupInit: function onPopupInit(t) {
+            if (this.parent) {
+              t.removeClass('active-pdf');
+            }
+          },
+          onPopupOpen: function onPopupOpen() {
+            console.log('onPopupOpen');
+          }
+        });
+      });
+      $(".mobile-pdf-btn").remove();
+    });
+    $(".image-popup-trigger").parent().after(mobileBtn);
   }
 
   var my = {

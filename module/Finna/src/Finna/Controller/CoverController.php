@@ -110,7 +110,7 @@ class CoverController extends \VuFind\Controller\CoverController
             $url = null;
             if (isset($highResolution[$size][$format]['url'])) {
                 $url = $highResolution[$size][$format]['url'];
-            } else if ($images[0]['pdf'] ?? false) {
+            } elseif ($images[0]['pdf'] ?? false) {
                 $url = $images[0]['urls']['large'] ?? null;
             }
             if ($url) {

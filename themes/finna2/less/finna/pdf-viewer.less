@@ -1,0 +1,26 @@
+.finna-popup.pdf-popup {
+  margin: -12px;
+  width: 100%;
+  position: absolute;
+  .finna-popup.close-button {
+    position: static;
+    background: white;
+    width: 100%;
+    color: @gray;
+    text-align: right;
+    text-shadow: none;
+    font-size: 30px;;
+    padding-bottom: 10px;
+  }
+}
+.mobile-pdf-btn {
+  display: none;
+}
+@media (max-width: @screen-xs-max) {
+  .mobile-pdf-btn {
+    display: inline-block;
+  }
+  .desktop-pdf-btn {
+    display: none;
+  }
+}
