@@ -16,7 +16,7 @@ finna.pdf = (function finnaPdf() {
     const proxyUrl = VuFind.path + "/Cover/download?size=master&format=pdf&&id=" + recordId;
     const iframe = $("<iframe/>")
       .attr("id", "pdf-js-viewer")
-      .attr("src", VuFind.path + "/themes/finna2/js/pdfjs/web/viewer.html?" + proxyUrl)
+      .attr("src", VuFind.path + "/themes/finna2/js/vendor/pdfjs/web/viewer.html?" + proxyUrl)
       .attr("frameborder", "0")
       .attr("width", "100%")
       .attr("height", "600");
