@@ -93,7 +93,7 @@
   if (!$noImage && $format === 'qdc') {
     $allImages = $this->driver->getAllImages(null, true);
     if ($allImages && $allImages[0]['pdf'] ?? false) {
-      echo '<div id="pdf-data" data-embed-pdf data-pdfurl= "' . $allImages[0]['urls']['large'] . '" data-recordid= "' . $this->driver->getUniqueID() . '">PDF</div>';
+      echo '<div id="pdf-data" data-embed-pdf data-pdfurl= "' . $allImages[0]['urls']['large'] . '" data-recordid= "' . $this->driver->getUniqueID() . '"></div>';
     }
   }
 ?>

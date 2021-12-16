@@ -45,9 +45,6 @@ finna.pdf = (function finnaPdf() {
             if (this.parent) {
               t.removeClass('active-pdf');
             }
-          },
-          onPopupOpen: function onPopupOpen() {
-            console.log('onPopupOpen');
           }
         });
       });
