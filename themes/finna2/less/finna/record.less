@@ -36,6 +36,11 @@
     .media-right { padding-left: 20px; }
   }
 
+  @media print {
+    // !important fixes a bootstrap print style issue 
+    .media-left { display: table-cell !important; }
+  }
+
   & .nav>li:not(.share-buttons) a {
     color: @action-link-color;
     font-size: 1em;
