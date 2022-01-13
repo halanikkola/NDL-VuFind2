@@ -108,8 +108,19 @@
 
   $topRecommendations = $this->results->getRecommendations('top');
 ?>
+<?php if (($recordTotal = $this->results->getResultTotal()) > 0): ?>
+  <div class="mobile-navigation visible-xs hidden-print">
+    <div class="sidebar-navigation">
+      <div class="narrow-search-link btn btn-primary btn-lg">
+        <?=$this->transEsc('Narrow Search')?>
+          <?php if ($filterCount > 0): ?>
+            <span class="active-filter-count">(<?=$filterCount?>)</span>
+          <?php endif; ?>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
 <?php $urlQuery = $results->getUrlQuery(); ?>
-
 <?php if (isset($filterList)): ?>
   <?php ob_start(); ?>
   <?php foreach ($filterList as $field => $data): ?>

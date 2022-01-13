@@ -294,7 +294,28 @@ JS;
         <?=$this->render($template)?>
       <?php endif; ?>
     </section>
-    <?php if ((!isset($this->layout()->showBreadcrumbs) || $this->layout()->showBreadcrumbs == true)
+    <?php if ($this->layout()->templateName === 'results'): ?>
+      
+    <?php endif; ?>
+    <?php // TODO: get rid of template-dir-* and template-name-* here ?>
+    <section role="main" class="main template-dir-<?=$this->templateDir?> template-name-<?=$this->templateName?><?=$this->browse ? ' browse' : '' ?><?=$currentTabClass?>">
+      <?php if (!empty($this->layout()->advSearchHeader)): ?>
+        <?=$this->layout()->advSearchHeader; ?>
+      <?php endif; ?>
+      <?php if ($this->layout()->templateName === 'results' || (!empty($this->layout()->finnaFilters))): ?>
+       <?php if (!empty($this->layout()->finnaFilters)): ?>
+        <div class="search-filters">
+            <div class="container filters-container">
+              <?=$this->layout()->finnaFilters?>
+            </div>
+        </div>
+      <?php endif; ?>
+      <?php endif; ?>
+      </div>
+      <?php if (!empty($this->layout()->finnaStreetBar)): ?>
+        <?=$this->layout()->finnaStreetBar?>
+      <?php endif; ?>
+      <?php if ((!isset($this->layout()->showBreadcrumbs) || $this->layout()->showBreadcrumbs == true)
       && !empty($this->layout()->breadcrumbs)
       && $this->layout()->breadcrumbs !== false
       ): ?>
@@ -304,35 +325,6 @@ JS;
         </div>
       </nav>
     <?php endif; ?>
-    <?php // TODO: get rid of template-dir-* and template-name-* here ?>
-    <section role="main" class="main template-dir-<?=$this->templateDir?> template-name-<?=$this->templateName?><?=$this->browse ? ' browse' : '' ?><?=$currentTabClass?>">
-      <?php if (!empty($this->layout()->advSearchHeader)): ?>
-        <?=$this->layout()->advSearchHeader; ?>
-      <?php endif; ?>
-      <?php if ($this->layout()->templateName === 'results' || (!empty($this->layout()->finnaFilters))): ?>
-        <div class="search-filters">
-        <?php if ($this->layout()->templateName === 'results'): ?>
-          <div class="mobile-navigation visible-xs hidden-print">
-            <ul>
-              <li class="sidebar-navigation">
-                <span class="narrow-search-link btn btn-primary btn-lg">
-                  <?=$this->transEsc('Narrow Search')?>
-                </span>
-              </li>
-            </ul>
-          </div>
-          <?php endif; ?>
-          <?php if (!empty($this->layout()->finnaFilters)): ?>
-            <div class="container filters-container">
-              <?=$this->layout()->finnaFilters?>
-            </div>
-          <?php endif; ?>
-        </div>
-      <?php endif; ?>
-      </div>
-      <?php if (!empty($this->layout()->finnaStreetBar)): ?>
-        <?=$this->layout()->finnaStreetBar?>
-      <?php endif; ?>
       <?php if (!empty($this->layout()->finnaMainHeader)): ?>
         <div id="content-heading" class="finna-main-header">
           <div class="container">

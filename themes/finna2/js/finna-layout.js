@@ -141,7 +141,6 @@ finna.layout = (function finnaLayout() {
       if ($(e.target).attr('class') !== 'fa fa-info-big') {
         $('.sidebar').toggleClass('open');
       }
-      $('.mobile-navigation .sidebar-navigation i').toggleClass('fa-arrow-down');
       $('body').toggleClass('prevent-scroll');
     });
     $('.mobile-navigation .sidebar-navigation .active-filters').off('click').on('click', function onClickMobileActiveFilters() {
@@ -440,9 +439,9 @@ finna.layout = (function finnaLayout() {
     var identifier = decodeURIComponent(window.location.hash);
     if (identifier === '') {
       // Scroll to search box
-      if ($(window).height() < 960 && $(window).scrollTop() === 0) {
-        target = $('.search-form-container');
-      }
+      // if ($(window).height() < 960 && $(window).scrollTop() === 0) {
+      //  target = $('.search-form-container');
+      // }
     } else {
       // Scroll to record
       var result = $('.hiddenId[value="' + identifier.substr(1) + '"]');
