@@ -110,7 +110,9 @@
   section.template-dir-collection.template-name-view .sidebar {
     position: fixed;
     top: 120%;
-    transition: top 0.5s ease;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.25s;
     background: @body-bg;
     z-index: 1030;
     width: 100%;
@@ -121,8 +123,8 @@
     padding-right: 0px;
     padding-bottom: 40px;
     &.open {
-      top: 0%;
-      right: 0;
+      top: 0;
+      opacity: 100%;
     }
     .list-group.facet:last-child {
       margin-bottom: 44px;
@@ -136,28 +138,22 @@
     }
   }
   .mobile-navigation {
-    .mobile-toolbar();
-    left: 0;
-    z-index: 60;
-    i {
-      font-size: 15px;
-    }
-    li.sidebar-navigation {
-      padding: 11px;
-      color: @sidebar-header-text-color;
-      font-size: 1em;
-      &:hover {
+    position: sticky;
+    top: 64px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    z-index: 1000;
+    background: #fff;
+    .sidebar-navigation {
+      .narrow-search-link {
+        font-size: 1.2em;
+        text-transform: uppercase;
+        width: 100%;
+        color: @sidebar-header-text-color;
+        &:hover {
         cursor: pointer;
+        }
       }
-    }
-    span.narrow-search-link {
-      font-size: 1em;
-      font-weight: 400;
-      text-transform: uppercase;
-    }
-    span.active-filters {
-      float: right;
-      max-width: 55%;
     }
   }
 }
