@@ -138,10 +138,36 @@
     }
   }
   .mobile-navigation {
+    .mobile-toolbar();
+    left: 0;
+    z-index: 60;
+    i {
+      font-size: 15px;
+    }
+    li.sidebar-navigation {
+      padding: 11px;
+      color: @sidebar-header-text-color;
+      font-size: 1em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    span.narrow-search-link {
+      font-size: 1.2em;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    span.active-filters {
+      float: right;
+      max-width: 55%;
+    }
+  }
+  .mobile-navigation.narrowsearch-navigation {
     position: sticky;
     top: 64px;
     padding-top: 12px;
     padding-bottom: 12px;
+    margin-bottom: 24px;
     z-index: 1000;
     background: #fff;
     .sidebar-navigation {
